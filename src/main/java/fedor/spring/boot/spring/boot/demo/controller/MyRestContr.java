@@ -4,6 +4,8 @@ package fedor.spring.boot.spring.boot.demo.controller;
 import fedor.spring.boot.spring.boot.demo.EmployeeService;
 import fedor.spring.boot.spring.boot.demo.entity.Employee;
 import lombok.AllArgsConstructor;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -13,6 +15,7 @@ import java.util.Optional;
 @RequestMapping("/api")
 @AllArgsConstructor
 public class MyRestContr {
+@Autowired
   private  final EmployeeService employeeService;
 
 @GetMapping("/employees")
@@ -20,7 +23,7 @@ public class MyRestContr {
     {
         return employeeService.getAllEmployees();
     }
- @GetMapping("/employees/{id}")
+@GetMapping("/employees/{id}")
  public Optional<Employee> getEmployee(@PathVariable String id) {
      return employeeService.getId(id);
 
@@ -31,14 +34,14 @@ public class MyRestContr {
      employeeService.addEmployee(employee);
 return employee;
   }
-  @PutMapping("/employees")
+ @PutMapping("/employees")
    public Employee updateEmployee(@RequestBody Employee employee)
    {
        employeeService.update(employee);
 
       return employee;
   }
-  @DeleteMapping("/employees/{id}")
+ @DeleteMapping("/employees/{id}")
   public String deleteEmployee(@PathVariable String id)
   {
 employeeService.delete(id);

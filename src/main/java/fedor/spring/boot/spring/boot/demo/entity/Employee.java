@@ -1,21 +1,24 @@
 package fedor.spring.boot.spring.boot.demo.entity;
 
 import lombok.Data;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import javax.persistence.*;
+
 @Data
 @Document
-@Table(name = "employees")
+//@Table(name = "employees")
 public class Employee {
     @Id
-//    @GeneratedValue(strategy = GenerationType.IDENTITY)
-//    @Column(name = "id")
-    private String id;
-//    @Column(name = "name")
-    private String name;
-//    @Column(name = "email")
-    private String email;
+//  @GeneratedValue(strategy = GenerationType.IDENTITY)
+//   @Column(name = "id")
+ private String id;
+//  @Column(name = "name")
+  private String name;
+//   @Column(name = "email")
+
+  private String email;
 
 
     public Employee() {
