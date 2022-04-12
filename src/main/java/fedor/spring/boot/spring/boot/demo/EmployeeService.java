@@ -2,6 +2,7 @@ package fedor.spring.boot.spring.boot.demo;
 
 import fedor.spring.boot.spring.boot.demo.entity.Employee;
 import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
@@ -9,7 +10,7 @@ import java.util.Optional;
 @AllArgsConstructor
 @Service
 public class EmployeeService {
-
+    @Autowired
     private final EmployeeRepository employeeRepository;
     public List<Employee> getAllEmployees()
     {
