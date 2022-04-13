@@ -10,7 +10,7 @@ import java.util.Optional;
 @AllArgsConstructor
 @Service
 public class EmployeeService {
-    @Autowired
+
     private final EmployeeRepository employeeRepository;
     public List<Employee> getAllEmployees()
     {

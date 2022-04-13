@@ -15,7 +15,7 @@ import java.util.Optional;
 @RequestMapping("/api")
 @AllArgsConstructor
 public class MyRestContr {
-@Autowired
+
   private  final EmployeeService employeeService;
 
 @GetMapping("/employees")
